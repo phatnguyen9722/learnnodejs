@@ -5,8 +5,11 @@ const app = express()
 const port = 3000
 const path = require('path')
 
+console.log("__dirname", __dirname);
+
+app.use(express.static(path.join(__dirname,'public')));
 // morgan : HTTP logger 
-app.use(morgan('combined'))
+app.use(morgan('combined'));
 
 // express handlebars
 app.engine('hbs', hbs.engine({
